@@ -37,6 +37,11 @@ keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Navigate and modify tabs, splits, and buffers
+keymap("n", ",d", ":b#<bar>bd#<CR>", opts) -- close buffer, keep tab/split open
+keymap("n", "<leader>cc", ":bd<CR>", opts) -- close buffer, tab, and split altogether
+keymap("n", "<leader>ct", ":tabclose<CR>", opts) -- close buffer, tab, and split altogether
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
