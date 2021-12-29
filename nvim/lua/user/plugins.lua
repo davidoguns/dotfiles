@@ -74,8 +74,6 @@ return packer.startup(function(use)
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
-  use "rstacruz/vim-closer" -- Auto-close brackets on enter press
-
 	use {
 	  'lewis6991/gitsigns.nvim',
 		requires = {
