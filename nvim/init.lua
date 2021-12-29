@@ -9,4 +9,5 @@ require "user.lsp"
 require "user.telescope"
 require "user.gitsigns"
 require "user.lualine"
+require "user.treesitter"
 

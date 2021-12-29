@@ -1,6 +1,5 @@
 vim.opt.background = "light"
 
-
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
@@ -9,4 +8,5 @@ require "user.lsp"
 require "user.telescope"
 require "user.gitsigns"
 require "user.lualine"
+require "user.treesitter"
 
