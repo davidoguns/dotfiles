@@ -45,7 +45,32 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
+  use "kyazdani42/nvim-web-devicons"
+  use "folke/tokyonight.nvim"
+
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/cmp-buffer' -- Autocompletion plugin
+  use 'hrsh7th/cmp-path' -- Autocompletion plugin
+  use 'hrsh7th/cmp-cmdline' -- Autocompletion plugin
+  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'hrsh7th/cmp-nvim-lua' -- LSP source for nvim-cmp
+
+  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
+  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+  use 'williamboman/nvim-lsp-installer'
+
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-media-files.nvim'
+
+  use {
+		'nvim-lualine/lualine.nvim',
+		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+	}
+
   use "rstacruz/vim-closer" -- Auto-close brackets on enter press
+
 	use {
 	  'lewis6991/gitsigns.nvim',
 		requires = {
@@ -60,3 +85,4 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
+
