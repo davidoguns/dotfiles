@@ -69,6 +69,9 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
 
+  use 'mhinz/vim-startify' -- fancy start screen
+  use 'Shatur/neovim-session-manager' -- fancy start screen
+
   use {
 		'nvim-lualine/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
