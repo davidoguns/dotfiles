@@ -72,6 +72,9 @@ return packer.startup(function(use)
   use 'mhinz/vim-startify' -- fancy start screen
   use 'Shatur/neovim-session-manager'
 
+  use 'numToStr/Comment.nvim'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
   use {
 		'nvim-lualine/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
