@@ -40,7 +40,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Navigate and modify tabs, splits, and buffers
 keymap("n", ",d", ":b#<bar>bd#<CR>", opts) -- close buffer, keep tab/split open
 keymap("n", "<leader>cc", ":bd<CR>", opts) -- close buffer, tab, and split altogether
-keymap("n", "<leader>ct", ":tabclose<CR>", opts) -- close buffer, tab, and split altogether
+keymap("n", "<leader>ct", ":tabclose<CR>", opts) -- close tab, keep buffer open
 
 -- Visual --
 -- Stay in indent mode
@@ -66,8 +66,14 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-keymap("n", "<leader>tf", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>tf", "<cmd>Telescope git_files<cr>", opts)
+keymap("n", "<leader>tF", "<cmd>Telescope find_files<cr>", opts) -- finds all files at current working directory root. This is too much with build directories not ignored
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>tg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>tG", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<leader>ts", "<cmd>Telescope sessions<cr>", opts)
+keymap("n", "<leader>tb", "<cmd>Telescope buffers<cr>", opts)
+
+-- Enable syntax fold shortcut
+keymap("n", "<leader>zz", "<cmd>:set foldmethod=syntax<cr>", opts)
 

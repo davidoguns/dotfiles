@@ -70,7 +70,7 @@ return packer.startup(function(use)
   }
 
   use 'mhinz/vim-startify' -- fancy start screen
-  use 'Shatur/neovim-session-manager' -- fancy start screen
+  use 'Shatur/neovim-session-manager'
 
   use {
 		'nvim-lualine/lualine.nvim',
