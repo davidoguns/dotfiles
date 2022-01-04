@@ -1,5 +1,3 @@
-vim.opt.background = "dark"
-
 require "user.options"
 require "user.keymaps"
 require "user.plugins"

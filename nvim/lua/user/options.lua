@@ -22,5 +22,5 @@ vim.opt.sidescrolloff = 4
 vim.opt.signcolumn = "yes"
 -- set in init.lua so different profiles can set differently
 vim.opt.background = "dark"
-
+vim.opt.termguicolors = true
 

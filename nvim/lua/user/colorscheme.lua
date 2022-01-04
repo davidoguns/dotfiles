@@ -8,6 +8,6 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Load the colorscheme
 vim.cmd[[colorscheme tokyonight]]
--- Then force a tmux-compatible color highlight for the active line
-vim.cmd[[hi CursorLine guibg=#000000]]
+-- Force a tmux-compatible color highlight for the active line
+-- vim.cmd[[hi CursorLine guibg=#000000]]
 
