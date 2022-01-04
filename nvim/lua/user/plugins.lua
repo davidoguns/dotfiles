@@ -48,48 +48,50 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "folke/tokyonight.nvim"
 
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-buffer' -- Autocompletion plugin
-  use 'hrsh7th/cmp-path' -- Autocompletion plugin
-  use 'hrsh7th/cmp-cmdline' -- Autocompletion plugin
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'hrsh7th/cmp-nvim-lua' -- LSP source for nvim-cmp
+  use "akinsho/bufferline.nvim"
 
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use "hrsh7th/nvim-cmp" -- Autocompletion plugin
+  use "hrsh7th/cmp-buffer" -- Autocompletion plugin
+  use "hrsh7th/cmp-path" -- Autocompletion plugin
+  use "hrsh7th/cmp-cmdline" -- Autocompletion plugin
+  use "saadparwaiz1/cmp_luasnip" -- Snippets source for nvim-cmp
+  use "hrsh7th/cmp-nvim-lsp" -- LSP source for nvim-cmp
+  use "hrsh7th/cmp-nvim-lua" -- LSP source for nvim-cmp
 
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-  use 'williamboman/nvim-lsp-installer'
+  use "L3MON4D3/LuaSnip" -- Snippets plugin
 
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-media-files.nvim'
+  use "neovim/nvim-lspconfig" -- Collection of configurations for built-in LSP client
+  use "williamboman/nvim-lsp-installer"
+
+  use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
 
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
 
-  use 'mhinz/vim-startify' -- fancy start screen
-  use 'Shatur/neovim-session-manager'
+  use "mhinz/vim-startify" -- fancy start screen
+  use "Shatur/neovim-session-manager"
 
-  use 'numToStr/Comment.nvim'
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use 'windwp/nvim-autopairs'
+  use "numToStr/Comment.nvim"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "windwp/nvim-autopairs"
 
   use {
-		'nvim-lualine/lualine.nvim',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+		"nvim-lualine/lualine.nvim",
+		requires = {"kyazdani42/nvim-web-devicons", opt = true}
 	}
 
 	use {
-	  'lewis6991/gitsigns.nvim',
+	  "lewis6991/gitsigns.nvim",
 		requires = {
-	    'nvim-lua/plenary.nvim'
+	    "nvim-lua/plenary.nvim"
 		},
-		tag = 'release' -- To use the latest release
+		tag = "release" -- To use the latest release
 	}
 
-  use 'ggandor/lightspeed.nvim'
+  use "ggandor/lightspeed.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
