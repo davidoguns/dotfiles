@@ -48,6 +48,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "folke/tokyonight.nvim"
 
+  use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
 
   use "hrsh7th/nvim-cmp" -- Autocompletion plugin

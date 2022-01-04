@@ -25,7 +25,8 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -38,9 +39,9 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Navigate and modify tabs, splits, and buffers
-keymap("n", ",d", ":b#<bar>bd#<CR>", opts) -- close buffer, keep tab/split open
-keymap("n", "<leader>cc", ":bd<CR>", opts) -- close buffer, tab, and split altogether
+--keymap("n", ",d", ":b#<bar>bd#<CR>", opts) -- close buffer, keep tab/split open
 keymap("n", "<leader>ct", ":tabclose<CR>", opts) -- close tab, keep buffer open
+keymap("n", "<leader>bd", ":bd<CR>", opts) -- close tab, keep buffer open
 
 -- Visual --
 -- Stay in indent mode

@@ -1,3 +1,4 @@
+-- configure nvim-comment plugin
 local status_ok, Comment = pcall(require, 'Comment')
 if not status_ok then
   return
