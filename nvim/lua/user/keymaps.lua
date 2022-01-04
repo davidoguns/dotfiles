@@ -77,4 +77,6 @@ keymap("n", "<leader>tb", "<cmd>Telescope buffers<cr>", opts)
 
 -- Enable syntax fold shortcut
 keymap("n", "<leader>zz", "<cmd>:set foldmethod=syntax<cr>", opts)
+-- Enable entire file format
+keymap("n", "<leader>zf", "<cmd>:LspFormat<cr>", opts)
 

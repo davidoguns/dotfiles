@@ -63,6 +63,7 @@ return packer.startup(function(use)
 
   use "neovim/nvim-lspconfig" -- Collection of configurations for built-in LSP client
   use "williamboman/nvim-lsp-installer"
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"

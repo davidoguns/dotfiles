@@ -81,11 +81,13 @@ local function lsp_keymaps(bufnr)
   )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd [[ command! LspFormat execute 'lua vim.lsp.buf.formatting()' ]]
+  vim.cmd [[ command! LspFormat execute 'lua vim.lsp.buf.formatting_sync()' ]]
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
+  -- use the following style of exclusion to prevent :LspFormat from asking which formatter if more than one is found
+  -- typically this would be the language server having formatting, and null-ls plugin
+  if client.name == "rust_analyzer" then
     client.resolved_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)
