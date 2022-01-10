@@ -50,6 +50,7 @@ return packer.startup(function(use)
 
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
 
   use "hrsh7th/nvim-cmp" -- Autocompletion plugin
   use "hrsh7th/cmp-buffer" -- Autocompletion plugin

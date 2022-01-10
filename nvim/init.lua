@@ -13,6 +13,7 @@ require "user.nvim-tree"
 require "user.treesitter"
 require "user.lightspeed"
 require "user.telescope"
+require "user.indent-blankline"
 require "user.startify"
 require "user.session-manager"
 
