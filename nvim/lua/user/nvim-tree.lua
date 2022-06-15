@@ -63,11 +63,11 @@ nvim_tree.setup {
   update_cwd = false,
   reload_on_bufenter = false,
   view = {
-    width = 30,
+    width = 45,
     height = 30,
     hide_root_folder = false,
     side = "left",
-    preserve_window_proportions = false,
+    preserve_window_proportions = true,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
@@ -97,7 +97,7 @@ nvim_tree.setup {
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
+    enable = true,
     update_cwd = false,
     ignore_list = {},
   },

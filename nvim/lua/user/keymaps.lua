@@ -40,8 +40,11 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Navigate and modify tabs, splits, and buffers
 --keymap("n", ",d", ":b#<bar>bd#<CR>", opts) -- close buffer, keep tab/split open
-keymap("n", "<leader>ct", ":tabclose<CR>", opts) -- close tab, keep buffer open
-keymap("n", "<leader>bd", ":bd<CR>", opts) -- close tab, keep buffer open
+keymap("n", "<leader>bd", ":bd<CR>", opts) -- close buffer
+-- requires BufOnly.vim script to be somewhere under '~/.local/share/nvim/site/plugin/'
+-- https://github.com/vim-scripts/BufOnly.vim/blob/master/plugin/BufOnly.vim
+-- https://www.vim.org/scripts/script.php?script_id=1071
+keymap("n", "<leader>bD", ":BufOnly<CR>", opts) -- close all other buffers
 
 -- Visual --
 -- Stay in indent mode
