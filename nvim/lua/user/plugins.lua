@@ -41,69 +41,69 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+ use "wbthomason/packer.nvim" -- Have packer manage itself
+ use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+ use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-  use "kyazdani42/nvim-web-devicons"
-  use "folke/tokyonight.nvim"
+ use "kyazdani42/nvim-web-devicons"
+ use "folke/tokyonight.nvim"
 
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
+ use "kyazdani42/nvim-tree.lua"
+ use "akinsho/bufferline.nvim"
+ use "lukas-reineke/indent-blankline.nvim"
 
-  use "hrsh7th/nvim-cmp" -- Autocompletion plugin
-  use "hrsh7th/cmp-buffer" -- Autocompletion plugin
-  use "hrsh7th/cmp-path" -- Autocompletion plugin
-  use "hrsh7th/cmp-cmdline" -- Autocompletion plugin
-  use "saadparwaiz1/cmp_luasnip" -- Snippets source for nvim-cmp
-  use "hrsh7th/cmp-nvim-lsp" -- LSP source for nvim-cmp
-  use "hrsh7th/cmp-nvim-lua" -- LSP source for nvim-cmp
+ use "hrsh7th/nvim-cmp" -- Autocompletion plug
+ use "hrsh7th/cmp-buffer" -- Autocompletion plugin
+ use "hrsh7th/cmp-path" -- Autocompletion plugin
+ use "hrsh7th/cmp-cmdline" -- Autocompletion plugin
+ use "saadparwaiz1/cmp_luasnip" -- Snippets source for nvim-cmp
+ use "hrsh7th/cmp-nvim-lsp" -- LSP source for nvim-cmp
+ use "hrsh7th/cmp-nvim-lua" -- LSP source for nvim-cmp
 
-  use "L3MON4D3/LuaSnip" -- Snippets plugin
+ use "L3MON4D3/LuaSnip" -- Snippets plugin
 
-  use "neovim/nvim-lspconfig" -- Collection of configurations for built-in LSP client
-  use "williamboman/nvim-lsp-installer"
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+ use "neovim/nvim-lspconfig" -- Collection of configurations for built-in LSP client
+ use "williamboman/nvim-lsp-installer"
+ use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+	--
+ use "nvim-telescope/telescope.nvim"
+ use "nvim-telescope/telescope-media-files.nvim"
 
-  use "nvim-telescope/telescope.nvim"
-  use "nvim-telescope/telescope-media-files.nvim"
+ use {
+     "nvim-treesitter/nvim-treesitter",
+     run = ":TSUpdate",
+ }
+	--
+ use "mhinz/vim-startify" -- fancy start screen
+ use "Shatur/neovim-session-manager"
+	--
+ use "numToStr/Comment.nvim"
+ use "JoosepAlviste/nvim-ts-context-commentstring"
+ use "windwp/nvim-autopairs"
 
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
+ use {
+	"nvim-lualine/lualine.nvim",
+	requires = {"kyazdani42/nvim-web-devicons", opt = true}
+}
 
-  use "mhinz/vim-startify" -- fancy start screen
-  use "Shatur/neovim-session-manager"
+use {
+  "lewis6991/gitsigns.nvim",
+    requires = {
+  "nvim-lua/plenary.nvim"
+	},
+	tag = "release" -- To use the latest release
+}
+ 
+ use "ggandor/lightspeed.nvim"
 
-  use "numToStr/Comment.nvim"
-  use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "windwp/nvim-autopairs"
-
-  use {
-		"nvim-lualine/lualine.nvim",
-		requires = {"kyazdani42/nvim-web-devicons", opt = true}
-	}
-
-	use {
-	  "lewis6991/gitsigns.nvim",
-		requires = {
-	    "nvim-lua/plenary.nvim"
-		},
-		tag = "release" -- To use the latest release
-	}
-
-  use "ggandor/lightspeed.nvim"
-
-  use "mfussenegger/nvim-dap"
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-
-  use {
-    "rcarriga/vim-ultest",
-    requires = {"vim-test/vim-test"},
-    run = {":UpdateRemotePlugins"}
-  }
+ --  use "mfussenegger/nvim-dap"
+ --  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	--
+ --  use {
+ --    "rcarriga/vim-ultest",
+ --    requires = {"vim-test/vim-test"},
+ --    run = {":UpdateRemotePlugins"}
+ --  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

@@ -46,7 +46,7 @@ end
 
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
@@ -88,7 +88,7 @@ M.on_attach = function(client, bufnr)
   -- use the following style of exclusion to prevent :LspFormat from asking which formatter if more than one is found
   -- typically this would be the language server having formatting, and null-ls plugin
   if client.name == "rust_analyzer" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)

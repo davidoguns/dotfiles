@@ -45,6 +45,7 @@ keymap("n", "<leader>bd", ":bd<CR>", opts) -- close buffer
 -- https://github.com/vim-scripts/BufOnly.vim/blob/master/plugin/BufOnly.vim
 -- https://www.vim.org/scripts/script.php?script_id=1071
 keymap("n", "<leader>bD", ":BufOnly<CR>", opts) -- close all other buffers
+keymap("n", "<leader>bl", ":b#<CR>", opts) -- change to last edited buffer
 
 -- Visual --
 -- Stay in indent mode
