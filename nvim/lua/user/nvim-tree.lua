@@ -1,7 +1,4 @@
 -- vim.g.nvim_tree_quit_on_open = 1 -- 0 by default, closes the tree when you open a file
-vim.g.nvim_tree_highlight_opened_files = 1  -- 0 by default, will enable folder and file icon highlight for opened files/directories.
-vim.g.nvim_tree_root_folder_modifier = ':~'  -- This is the default. See :help filename-modifiers for more options
-vim.g.nvim_tree_add_trailing = 1  -- 0 by default, append a trailing slash to folder names
 vim.g.nvim_tree_refresh_wait = 500  -- 1000 by default, control how often the tree can be refreshed, 1000 means the tree can be refresh once per 1000ms.
 
 -- DO NOT want the following, kept here for easier review
@@ -12,29 +9,6 @@ vim.g.nvim_tree_refresh_wait = 500  -- 1000 by default, control how often the tr
 -- vim.g.nvim_tree_respect_buf_cwd = 1  -- 0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
 -- vim.g.nvim_tree_create_in_closed_folder = 0  -- 1 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
 -- vim.g.nvim_tree_indent_markers = 1  -- 0 by default, this option shows indent markers when folders are open
-
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "S",
-    unmerged = "",
-    renamed = "➜",
-    deleted = "",
-    untracked = "U",
-    ignored = "◌",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-  },
-}
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
@@ -64,7 +38,6 @@ nvim_tree.setup {
   reload_on_bufenter = false,
   view = {
     width = 45,
-    height = 30,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = true,
@@ -79,6 +52,9 @@ nvim_tree.setup {
     },
   },
   renderer = {
+    add_trailing = true,
+    highlight_opened_files = "icon",
+    root_folder_modifier = ':~',
     indent_markers = {
       enable = false,
       icons = {
@@ -88,8 +64,28 @@ nvim_tree.setup {
       },
     },
     icons = {
-      webdev_colors = true,
-      git_placement = "before",
+        webdev_colors = true,
+        git_placement = "before",
+        glyphs = {
+            default = "",
+            symlink = "",
+            git = {
+                unstaged = "",
+                staged = "S",
+                unmerged = "",
+                renamed = "➜",
+                deleted = "",
+                untracked = "U",
+                ignored = "◌",
+            },
+            folder = {
+                default = "",
+                open = "",
+                empty = "",
+                empty_open = "",
+                symlink = "",
+            },
+        },
     },
   },
   hijack_directories = {
