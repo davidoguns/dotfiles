@@ -144,7 +144,6 @@ alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 #alias crtmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_PREFIX_PATH=/opt/crt -DCMAKE_INSTALL_PREFIX=/opt/crt'
 
 alias clang-format-cwd="find . -name '*.c' -o -name '*.h' | xargs clang-format -i"
-alias nvims="nvim -u ~/.config/nvim/init-screen.lua"
 
 source "$HOME/.cargo/env"
 
