@@ -12,8 +12,8 @@ lsp_installer.on_server_ready(function(server)
 	}
 
   if server.name == "jdtls" then
-    local jsonls_opts = require("user.lsp.settings.jdtls")
-    opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+    local jdtls_opts = require("user.lsp.settings.jdtls")
+    opts = vim.tbl_deep_extend("force", jdtls_opts, opts)
   end
 
   if server.name == "jsonls" then

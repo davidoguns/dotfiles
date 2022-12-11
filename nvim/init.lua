@@ -16,4 +16,5 @@ require "user.telescope"
 require "user.indent-blankline"
 require "user.startify"
 require "user.session-manager"
+require "user.rust-tools"
 
