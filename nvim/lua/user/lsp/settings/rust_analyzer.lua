@@ -1,4 +1,4 @@
-local opts = {
+return {
   tools = { -- rust-tools options
 
     -- how to execute terminal commands
@@ -172,6 +172,3 @@ local opts = {
     },
   },
 }
-
-require('rust-tools').setup(opts)
-
