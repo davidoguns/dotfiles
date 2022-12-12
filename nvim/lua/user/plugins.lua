@@ -63,7 +63,6 @@ return packer.startup(function(use)
     use "L3MON4D3/LuaSnip" -- Snippets plugin
 
     use "neovim/nvim-lspconfig" -- Collection of configurations for built-in LSP client
-    use "williamboman/nvim-lsp-installer"
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     --
     use "nvim-telescope/telescope.nvim"
@@ -99,7 +98,13 @@ return packer.startup(function(use)
     use "mfussenegger/nvim-dap"
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
-    use "simrat39/rust-tools.nvim"
+    use {
+        'saecki/crates.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('crates').setup()
+        end,
+    }
 
     --
     --  use {
