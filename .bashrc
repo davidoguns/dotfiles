@@ -164,7 +164,6 @@ function proml {
 }
 proml
 
-set -o vi
 alias luamake=/home/ebonyseraph/git/lua-language-server/3rd/luamake/luamake
 # export PATH=/home/ebonyseraph/git/lua-language-server/bin:$PATH
 export PATH=/home/ebonyseraph/.bin:$PATH

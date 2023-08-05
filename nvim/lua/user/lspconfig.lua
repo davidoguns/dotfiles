@@ -63,7 +63,7 @@ require('lspconfig')['rust_analyzer'].setup {
 
 require('lspconfig').taplo.setup {}
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup {
   settings = {
     Lua = {
       runtime = {
