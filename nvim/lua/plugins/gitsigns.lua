@@ -1,6 +1,15 @@
 return {
     "lewis6991/gitsigns.nvim",
+    lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+        {"]d", "<cmd>Gitsigns next_hunk<CR>",
+            desc = "NextHunk"},
+        {"[d", "<cmd>Gitsigns prev_hunk<CR>",
+            desc = "PreviousHunk"},
+        {"<leader>D", "<cmd>Gitsigns preview_hunk<CR>",
+            desc = "PreviewHunk"},
+    },
     config = function()
         require('gitsigns').setup {
             watch_gitdir = {
@@ -18,13 +27,6 @@ return {
             current_line_blame_formatter_opts = {
                 relative_time = true
             },
-            keymaps = {
-                -- Default keymap options
-                noremap = true,
-
-                ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR><cmd>Gitsigns preview_hunk<CR>'"},
-                ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR><cmd>Gitsigns preview_hunk<CR>'"},
-            },
         }
-    end
+    end,
 }

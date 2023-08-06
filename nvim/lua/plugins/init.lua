@@ -4,8 +4,6 @@ return {
 
     { "kyazdani42/nvim-web-devicons" },
 
-    { "lukas-reineke/indent-blankline.nvim" },
-
     { "hrsh7th/cmp-buffer" }, -- Autocompletion plugin
     { "hrsh7th/cmp-path" }, -- Autocompletion plugin
     { "hrsh7th/cmp-cmdline" }, -- Autocompletion plugin
