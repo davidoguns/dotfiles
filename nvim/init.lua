@@ -1,20 +1,19 @@
 require "user.options"
 require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.gitsigns"
-require "user.comment"
-require "user.autopairs"
-require "user.bufferline"
-require "user.lualine"
-require "user.nvim-tree"
-require "user.treesitter"
-require "user.lightspeed"
-require "user.telescope"
-require "user.indent-blankline"
-require "user.startify"
-require "user.session-manager"
-require "user.rust-tools"
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Install your plugins here
+return require('lazy').setup('plugins')
 
