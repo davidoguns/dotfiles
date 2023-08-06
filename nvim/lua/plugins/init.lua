@@ -16,21 +16,10 @@ return {
     { "williamboman/nvim-lsp-installer" },
     { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
 
-    { "nvim-telescope/telescope.nvim" },
-    { "nvim-telescope/telescope-media-files.nvim" },
-
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-    },
-    { "Shatur/neovim-session-manager" },
-
     -- fancy start screen that seems to be getting overwritten by resuming last open files
     -- or session. Is this new default neovim or another plugin's behavior?
-    { "mhinz/vim-startify" },
+    -- { "mhinz/vim-startify" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-
-    { "ggandor/lightspeed.nvim" },
 
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui",
