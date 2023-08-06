@@ -13,8 +13,8 @@ return {
     { "L3MON4D3/LuaSnip" }, -- Snippets plugin
 
     { "neovim/nvim-lspconfig" }, -- Collection of configurations for built-in LSP client
-    { "williamboman/nvim-lsp-installer" },
     { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
+    { "williamboman/mason-lspconfig.nvim" },
 
     -- fancy start screen that seems to be getting overwritten by resuming last open files
     -- or session. Is this new default neovim or another plugin's behavior?
@@ -23,6 +23,6 @@ return {
 
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui",
-        dependencies = {"mfussenegger/nvim-dap"}
+        dependencies = { "mfussenegger/nvim-dap" }
     },
 }

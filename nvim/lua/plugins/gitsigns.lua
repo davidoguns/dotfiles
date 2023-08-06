@@ -3,11 +3,11 @@ return {
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-        {"]d", "<cmd>Gitsigns next_hunk<CR>",
+        {"]c", "<cmd>Gitsigns next_hunk<CR>",
             desc = "NextHunk"},
-        {"[d", "<cmd>Gitsigns prev_hunk<CR>",
+        {"[c", "<cmd>Gitsigns prev_hunk<CR>",
             desc = "PreviousHunk"},
-        {"<leader>D", "<cmd>Gitsigns preview_hunk<CR>",
+        {"<leader>C", "<cmd>Gitsigns preview_hunk<CR>",
             desc = "PreviewHunk"},
     },
     config = function()
