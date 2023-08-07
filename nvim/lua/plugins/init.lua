@@ -18,8 +18,10 @@ return {
 
     -- fancy start screen that seems to be getting overwritten by resuming last open files
     -- or session. Is this new default neovim or another plugin's behavior?
-    -- { "mhinz/vim-startify" },
+    { "mhinz/vim-startify" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
+    { "nvim-treesitter/nvim-treesitter-context" },
+
 
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui",
