@@ -6,7 +6,7 @@ return {
     },
     config = function()
         require("symbols-outline").setup {
-            highlight_hovered_item = true,
+            highlight_hovered_item = true, -- This is "high" CPU usage apparently? Only when outline is visible?
             show_guides = true,
             auto_preview = false,
             position = 'right',
