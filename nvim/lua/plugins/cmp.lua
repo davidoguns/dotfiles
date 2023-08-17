@@ -1,6 +1,6 @@
 return {
     "hrsh7th/nvim-cmp", -- Autocompletion plug
-    dependencies = { "saadparwaiz1/cmp_luasnip" },
+    dependencies = { "saadparwaiz1/cmp_luasnip", "L3MON4D3/LuaSnip" },
     config = function()
         local cmp_status_ok, cmp = pcall(require, "cmp")
         if not cmp_status_ok then
@@ -14,12 +14,6 @@ return {
 
         require("luasnip/loaders/from_vscode").lazy_load()
 
-        local check_backspace = function()
-            local col = vim.fn.col "." - 1
-            return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-        end
-
-        --   פּ ﯟ   some other good icons
         local kind_icons = {
             Text = "",
             Method = "m",
@@ -48,6 +42,12 @@ return {
             TypeParameter = "",
         }
         -- find more here: https://www.nerdfonts.com/cheat-sheet
+        --
+        local has_words_before = function()
+            unpack = unpack or table.unpack
+            local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+            return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        end
 
         cmp.setup {
             snippet = {
@@ -69,34 +69,29 @@ return {
                 -- Accept currently selected item. If none selected, `select` first item.
                 -- Set `select` to `false` to only confirm explicitly selected items.
                 ["<CR>"] = cmp.mapping.confirm { select = true },
-                ["<Tab>"] = cmp.mapping(
-                    function(fallback)
-                        if luasnip.expandable() then
-                            luasnip.expand()
+                ["<Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+                            -- they way you will only jump inside the snippet region
                         elseif luasnip.expand_or_jumpable() then
                             luasnip.expand_or_jump()
-                        elseif check_backspace() then
-                            fallback()
+                        elseif has_words_before() then
+                            cmp.complete()
                         else
                             fallback()
                         end
-                    end,
-                    {
-                        "i",
-                        "s",
-                    }),
+                    end, { "i", "s" }),
                 ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if luasnip.jumpable(-1) then
-                        luasnip.jump(-1)
-                    else
-                        fallback()
-                    end
-                end,
-                {
-                    "i",
-                    "s",
-                }),
-            },
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                },
             formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
@@ -107,29 +102,28 @@ return {
                         nvim_lsp = "[LSP]",
                         nvim_lua = "[NVIM_LUA]",
                         luasnip = "[Snippet]",
+                        crates = "[CRATES]",
                         buffer = "[Buffer]",
                         path = "[Path]",
                     })[entry.source.name]
                     return vim_item
                 end,
             },
-            sources = {
-                -- !! references other 
+            sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "nvim_lua" },
-                { name = "crates" },
                 { name = "luasnip" },
+                { name = "crates" },
                 { name = "buffer" },
                 { name = "path" },
-            },
+            }),
             confirm_opts = {
                 behavior = cmp.ConfirmBehavior.Replace,
                 select = false,
             },
             window = {
-                documentation = {
-                    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-                },
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
             },
             experimental = {
                 ghost_text = false,

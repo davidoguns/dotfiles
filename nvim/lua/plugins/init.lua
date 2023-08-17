@@ -15,6 +15,7 @@ return {
     { "neovim/nvim-lspconfig" }, -- Collection of configurations for built-in LSP client
     { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
     { "williamboman/mason-lspconfig.nvim" },
+    { "lvimuser/lsp-inlayhints.nvim" },
 
     -- fancy start screen that seems to be getting overwritten by resuming last open files
     -- or session. Is this new default neovim or another plugin's behavior?
