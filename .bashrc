@@ -164,4 +164,7 @@ function proml {
 }
 proml
 
+#push this up earlier, user binary executable names take precedence
+PATH=$HOME/.bin:$PATH
+
 set -o vi
