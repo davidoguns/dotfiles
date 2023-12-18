@@ -13,18 +13,11 @@ return {
             reload_on_bufenter = false,
             view = {
                 width = 45,
-                hide_root_folder = false,
                 side = "left",
                 preserve_window_proportions = true,
                 number = false,
                 relativenumber = false,
                 signcolumn = "yes",
-                mappings = {
-                    custom_only = false,
-                    list = {
-                        -- user mappings go here
-                    },
-                },
             },
             renderer = {
                 add_trailing = true,

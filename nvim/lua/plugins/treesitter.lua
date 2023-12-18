@@ -21,13 +21,6 @@ return {
             },
             -- indent = { enable = true, disable = { "yaml" } },
             indent = { enable = true, disable = { } },
-            context_commentstring = {
-                enable = true,
-                -- From nvim-ts-context-commentstring doc: https://github.com/JoosepAlviste/nvim-ts-context-commentstring
-                -- The default behavior is to trigger commentstring updating on CursorHold. If your
-                -- updatetime setting is set to a high value, then the updating might not be triggered.
-                -- enable_autocmd = false,
-            }
         }
     end
 }
