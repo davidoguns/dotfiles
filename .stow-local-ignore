@@ -1,0 +1,27 @@
+# copy of contents under git clone https://git.savannah.gnu.org/git/stow.git
+#  -- default-ignore-list
+# Comments and blank lines are allowed.
+
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+# begin my own stuff:
+misc

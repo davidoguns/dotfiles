@@ -22,11 +22,12 @@
 
 /* Automatically generated layer name #define */
 #define LAYER_Base 0
-#define LAYER_Programming 1
-#define LAYER_Gaming 2
-#define LAYER_CallOfDuty 3
-#define LAYER_Lower 4
-#define LAYER_Magic 5
+#define LAYER_iOS 1
+#define LAYER_Programming 2
+#define LAYER_Gaming 3
+#define LAYER_CallOfDuty 4
+#define LAYER_Lower 5
+#define LAYER_Magic 6
 
 /* To deal with the situation where there is no Lower layer, to keep &lower happy */
 #ifndef LAYER_Lower
@@ -281,8 +282,19 @@
             &kp EQUAL    &kp N1   &kp N2    &kp N3     &kp N4  &kp N5                                                                  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
               &kp TAB     &kp Q    &kp W     &kp E      &kp R   &kp T                                                                   &kp Y     &kp U      &kp I     &kp O     &kp P   &kp BSLH
               &kp ESC     &kp A    &kp S     &kp D      &kp F   &kp G                                                                   &kp H     &kp J      &kp K     &kp L  &kp SEMI    &kp SQT
-            &kp GRAVE     &kp Z    &kp X     &kp C      &kp V   &kp B  &kp LSHFT    &kp DEL    &lower  &kp RALT  &kp RCTRL  &kp RSHFT   &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp PG_UP
- &magic LAYER_Magic 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT           &kp BSPC  &kp LCTRL  &kp LALT  &kp LGUI    &kp RET  &kp SPACE          &kp DOWN     &kp UP  &kp LBKT  &kp RBKT  &kp PG_DN
+            &kp GRAVE     &kp Z    &kp X     &kp C      &kp V   &kp B  &kp LSHFT    &kp DEL    &lower  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp PG_UP
+ &magic LAYER_Magic 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT           &kp BSPC  &kp LCTRL  &kp LALT  &kp RALT    &kp RET  &kp SPACE          &kp DOWN     &kp UP  &kp LBKT  &kp RBKT  &kp PG_DN
+            >;
+        };
+
+        layer_iOS {
+            bindings = <
+ &trans  &trans  &trans  &trans  &trans                                                                    &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp CAPS  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans          &trans  &trans    &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -299,23 +311,23 @@
 
         layer_Gaming {
             bindings = <
-   &trans     &trans  &trans  &trans  &trans                                                                     &trans  &trans  &trans  &trans  &trans
-   &trans     &trans  &trans  &trans  &trans  &trans                                                     &trans  &trans  &trans  &trans  &trans  &trans
-   &trans    &kp TAB   &kp Q   &kp W   &kp E   &kp R                                                     &trans  &trans  &trans  &trans  &trans  &trans
- &kp CAPS  &kp LCTRL   &kp A   &kp S   &kp D   &kp F                                                     &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &kp LSHFT   &kp Z   &kp X   &kp C   &kp V   &kp BSPC  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-   &trans     &trans  &trans  &trans  &trans          &kp SPACE  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+ &trans     &trans  &trans  &trans  &trans                                                                      &trans  &trans  &trans  &trans  &trans
+ &trans     &trans  &trans  &trans  &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+ &trans    &kp TAB   &kp Q   &kp W   &kp E   &kp R                                                      &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &kp LCTRL   &kp A   &kp S   &kp D   &kp F                                                      &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &kp LSHFT   &kp Z   &kp X   &kp C   &kp V   &kp BSPC  &kp ESC  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+ &trans     &trans  &trans  &trans  &trans          &kp SPACE   &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         layer_CallOfDuty {
             bindings = <
-   &trans     &trans  &trans  &trans  &trans                                                                     &trans  &trans  &trans  &trans  &trans
-   &trans     &trans  &trans  &trans  &trans  &trans                                                     &trans  &trans  &trans  &trans  &trans  &trans
-   &trans    &kp TAB   &kp U   &kp W   &kp R  &trans                                                     &trans  &trans  &trans  &trans  &trans  &trans
- &kp CAPS  &kp LSHFT   &kp A   &kp S   &kp D   &kp F                                                     &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &kp LCTRL   &kp Z   &kp X   &kp C   &kp V   &kp BSPC  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-   &trans      &kp H  &trans  &trans  &trans          &kp SPACE   &kp U  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+ &trans     &trans  &trans  &trans  &trans                                                                      &trans  &trans  &trans  &trans  &trans
+ &trans     &trans  &trans  &trans  &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+ &trans    &kp TAB   &kp U   &kp W   &kp R   &kp G                                                      &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &kp LSHFT   &kp A   &kp S   &kp D   &kp F                                                      &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &kp LCTRL   &kp Z   &kp X   &kp C   &kp V   &kp BSPC  &kp ESC  &kp F6  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+ &trans      &kp H  &trans  &trans  &trans          &kp SPACE    &kp U  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -336,8 +348,8 @@
        &none            &none            &none            &none            &none            &none                                                         &none   &none   &none   &none   &none           &none
        &none  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                         &none   &none   &none   &none   &none           &none
  &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                         &none   &none   &none   &none   &none     &bootloader
-  &sys_reset            &none            &none            &none            &none            &none   &bt_2   &bt_3         &none  &tog 2   &none   &none   &none   &none   &none   &none   &none      &sys_reset
-       &none            &none            &none            &none            &none                    &bt_0   &bt_1  &out OUT_USB  &tog 3   &none  &tog 1           &none   &none   &none   &none           &none
+  &sys_reset            &none            &none            &none            &none            &none   &bt_2   &bt_3         &none  &tog 3   &none  &tog 1   &none   &none   &none   &none   &none      &sys_reset
+       &none            &none            &none            &none            &none                    &bt_0   &bt_1  &out OUT_USB  &tog 4   &none  &tog 2           &none   &none   &none   &none           &none
             >;
         };
 
