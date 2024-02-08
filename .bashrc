@@ -116,27 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
-function proml {
-  local        BLUE="\[\033[0;34m\]"
-  local         RED="\[\033[0;31m\]"
-  local   LIGHT_RED="\[\033[1;31m\]"
-  local       GREEN="\[\033[0;32m\]"
-  local LIGHT_GREEN="\[\033[1;32m\]"
-  local       WHITE="\[\033[1;37m\]"
-  local  LIGHT_GRAY="\[\033[0;37m\]"
-  local      YELLOW="\[\033[1;33m\]"
-  local       BLACK="\[\033[0;30m\]"
-  local       BROWN="\[\033[0;33m\]"
-  local       RESET="\[\033[0;0m\]"
-
-   PS1="$BLUE[$BROWN\u@\h:\W$GREEN\$(parse_git_branch)$BLUE]$RESET\$ "
-}
-proml
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source "$HOME/.bash-git-prompt/gitprompt.sh"
+fi
 
 function join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d}"; }
 
@@ -146,23 +129,6 @@ alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 alias clang-format-cwd="find . -name '*.c' -o -name '*.h' | xargs clang-format -i"
 
 source "$HOME/.cargo/env"
-
-function proml {
-  local        BLUE="\[\033[0;34m\]"
-  local         RED="\[\033[0;31m\]"
-  local   LIGHT_RED="\[\033[1;31m\]"
-  local       GREEN="\[\033[0;32m\]"
-  local LIGHT_GREEN="\[\033[1;32m\]"
-  local       WHITE="\[\033[1;37m\]"
-  local  LIGHT_GRAY="\[\033[0;37m\]"
-  local      YELLOW="\[\033[1;33m\]"
-  local       BLACK="\[\033[0;30m\]"
-  local       BROWN="\[\033[0;33m\]"
-  local       RESET="\[\033[0;0m\]"
-
-   PS1="$BLUE[$BROWN\u@\h:\W$GREEN\$(parse_git_branch)$BLUE]$RESET\$ "
-}
-proml
 
 #push this up earlier, user binary executable names take precedence
 PATH=$HOME/.bin:$PATH
