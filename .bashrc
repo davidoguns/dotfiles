@@ -133,4 +133,7 @@ source "$HOME/.cargo/env"
 #push this up earlier, user binary executable names take precedence
 PATH=$HOME/.bin:$PATH
 
+EDITOR=nvim
 set -o vi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
