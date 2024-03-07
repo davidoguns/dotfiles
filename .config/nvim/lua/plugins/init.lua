@@ -16,13 +16,13 @@ return {
     { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
     { "williamboman/mason-lspconfig.nvim" },
     { "lvimuser/lsp-inlayhints.nvim" },
+    { "ray-x/lsp_signature.nvim" },
 
     -- fancy start screen that seems to be getting overwritten by resuming last open files
     -- or session. Is this new default neovim or another plugin's behavior?
     { "mhinz/vim-startify" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "nvim-treesitter/nvim-treesitter-context" },
-
 
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui",
