@@ -26,6 +26,10 @@ return {
                 local bufnr = args.buf
                 local client = vim.lsp.get_client_by_id(args.data.client_id)
                 require("lsp-inlayhints").on_attach(client, bufnr)
+                  --- Guard against servers without the signatureHelper capability
+                if client.server_capabilities.signatureHelpProvider then
+                    require('lsp-overloads').setup(client, { })
+                end
             end,
         })
     end

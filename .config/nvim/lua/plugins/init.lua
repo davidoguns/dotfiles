@@ -17,6 +17,7 @@ return {
     { "williamboman/mason-lspconfig.nvim" },
     { "lvimuser/lsp-inlayhints.nvim" },
     { "ray-x/lsp_signature.nvim" },
+    { "Issafalcon/lsp-overloads.nvim" },
 
     -- fancy start screen that seems to be getting overwritten by resuming last open files
     -- or session. Is this new default neovim or another plugin's behavior?

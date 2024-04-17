@@ -125,8 +125,11 @@ function join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d
 
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 #alias crtmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_PREFIX_PATH=/opt/crt -DCMAKE_INSTALL_PREFIX=/opt/crt'
-
 alias clang-format-cwd="find . -name '*.c' -o -name '*.h' | xargs clang-format -i"
+
+JAVA_HOME=/opt/java
+MAVEN_HOME=/opt/mvn
+PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
 
 source "$HOME/.cargo/env"
 
@@ -137,3 +140,10 @@ EDITOR=nvim
 set -o vi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# run bottom command only on WSL? grep uname?
+# Run ssh on logging, only if not running yet
+if [ ! "$(ps -elf | grep -v grep | grep /usr/sbin/sshd)" ];
+    then sudo service ssh start;
+fi
+
