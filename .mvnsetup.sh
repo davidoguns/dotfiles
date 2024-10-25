@@ -2,7 +2,7 @@
 # That should absolutely be run after Java set up
 
 MAVEN_HOME=/opt/mvn
-PATH=$MAVEN_HOME/bin:$PATH
+export PATH=$MAVEN_HOME/bin:$PATH
 
 # $1: fully qualified name of groupId:artifactId
 # all other args aren't positional:

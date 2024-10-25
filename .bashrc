@@ -131,12 +131,13 @@ JAVA_HOME=/opt/java
 #the other script is a sibling, or does it even matter and we just invoke what's
 #directly under the home directory
 source ~/.mvnsetup.sh
-PATH=$JAVA_HOME/bin:$PATH
+export PATH=$JAVA_HOME/bin:$PATH
 
 source "$HOME/.cargo/env"
 
 #push this up earlier, user binary executable names take precedence
-PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 
 EDITOR=nvim
 set -o vi
@@ -145,7 +146,9 @@ set -o vi
 
 # run bottom command only on WSL? grep uname?
 # Run ssh on logging, only if not running yet
-if [ ! "$(ps -elf | grep -v grep | grep /usr/sbin/sshd)" ];
-    then sudo service ssh start;
+if [ "$(uname -a | grep WSL2)" ]; then
+    if [ ! "$(ps -elf | grep -v grep | grep /usr/sbin/sshd)" ]; then
+        sudo service ssh start;
+    fi
 fi
 
