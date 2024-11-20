@@ -114,6 +114,7 @@ return {
                 { name = "nvim_lua" },
                 { name = "luasnip" },
                 { name = "crates" },
+                { name = "Neorg" },
                 { name = "buffer" },
                 { name = "path" },
             }),
