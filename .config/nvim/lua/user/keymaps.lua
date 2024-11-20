@@ -30,6 +30,7 @@ keymap("n", "<leader>sn", "<cmd>set relativenumber<CR>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<localleader>e", ":Neorg toc<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-S-Up>", ":resize +2<CR>", opts)
