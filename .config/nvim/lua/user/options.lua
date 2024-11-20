@@ -1,4 +1,4 @@
--- :help options to look up what this shit does
+-- :help options to look up what this stuff does
 vim.opt.backup = false;
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "preview" }  -- auto complete menu has preview and default selection
@@ -24,5 +24,3 @@ vim.opt.signcolumn = "yes"
 vim.opt.background = "dark"
 vim.opt.termguicolors = true                 -- enaables fancier font rendering and better colors
 vim.opt.updatetime = 1000                    -- updates to show symbol highlight faster, default = 5000
--- vim.opt.guifont = "NotoMono Nerd Font Mono:h10"
-
