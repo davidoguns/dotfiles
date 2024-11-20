@@ -1,4 +1,4 @@
--- :help options to look up what this stuff does
+-- :help options to see all options
 vim.opt.backup = false;
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "preview" }  -- auto complete menu has preview and default selection
