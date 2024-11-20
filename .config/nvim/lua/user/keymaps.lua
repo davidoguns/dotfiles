@@ -8,7 +8,7 @@ local keymap = vim.api.nvim_set_keymap
 -- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 -- Modes
 --   normal_mode = "n"
@@ -32,10 +32,10 @@ keymap("n", "<leader>sn", "<cmd>set relativenumber<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-S-Up>", ":resize +2<CR>", opts)
+keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
+keymap("n", "<C-S-Left>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-S-Right>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -84,6 +84,8 @@ keymap("n", "<leader>tb", "<cmd>Telescope buffers<cr>", opts)
 
 -- Enable syntax fold shortcut
 keymap("n", "<leader>zz", "<cmd>:set foldmethod=syntax<cr>", opts)
+keymap("n", "<leader>ac", "<cmd>:lua require('cmp').setup.buffer { enabled = false }<cr>", opts)
+keymap("n", "<leader>aC", "<cmd>:lua require('cmp').setup.buffer { enabled = true }<cr>", opts)
 
 -- LSP keymappings
 -- Global mappings.

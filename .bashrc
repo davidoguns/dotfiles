@@ -126,12 +126,16 @@ function join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 alias clang-format-cwd="find . -name '*.c' -o -name '*.h' | xargs clang-format -i"
 
-JAVA_HOME=/opt/java
+# JAVA_HOME=/opt/java
+#
 #should the below readlink and other methods to resolve where .bashrc is to ensure
 #the other script is a sibling, or does it even matter and we just invoke what's
 #directly under the home directory
 source ~/.mvnsetup.sh
-export PATH=$JAVA_HOME/bin:$PATH
+if [ -f .localsetup.sh ]; then
+    source ~/.localsetup.sh
+fi
+# export PATH=$JAVA_HOME/bin:$PATH
 
 source "$HOME/.cargo/env"
 
