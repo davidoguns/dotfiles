@@ -14,7 +14,7 @@ return {
                     config = {
                         workspaces = {
                             personal = "~/personal_notes",
-                            notes = "~/work_notes"
+                            work = "~/work_notes"
                         }
                     }
                 },

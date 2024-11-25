@@ -30,7 +30,11 @@ keymap("n", "<leader>sn", "<cmd>set relativenumber<CR>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<localleader>e", ":Neorg toc<cr>", opts)
+
+-- Neorg
+keymap("n", "<localleader>e", ":Neorg toc right<cr>", opts)
+keymap("n", "<localleader>nw", ":Neorg workspace work<cr>", opts)
+keymap("n", "<localleader>np", ":Neorg workspace personal<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-S-Up>", ":resize +2<CR>", opts)
@@ -81,6 +85,13 @@ keymap("n", "<leader>zz", "<cmd>:set foldmethod=syntax<cr>", opts)
 -- Toggle autocomplete. Useful for text files / note taking
 keymap("n", "<leader>ac", "<cmd>:lua require('cmp').setup.buffer { enabled = false }<cr>", opts)
 keymap("n", "<leader>aC", "<cmd>:lua require('cmp').setup.buffer { enabled = true }<cr>", opts)
+
+-- If using Neovide GUI, can't use terminal resize shortkey keys
+if vim.g.neovide then
+    vim.keymap.set({ "n", "v" }, "<C-=>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+    vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+end
 
 -- LSP keymappings
 -- Global mappings.
