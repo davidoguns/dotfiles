@@ -3,9 +3,9 @@ return {
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-        {"]c", "<cmd>Gitsigns next_hunk<CR>",
+        {"]c", "<cmd>Gitsigns next_hunk<CR><cmd>Gitsigns preview_hunk<CR>",
             desc = "NextHunk"},
-        {"[c", "<cmd>Gitsigns prev_hunk<CR>",
+        {"[c", "<cmd>Gitsigns prev_hunk<CR><cmd>Gitsigns preview_hunk<CR>",
             desc = "PreviousHunk"},
         {"<leader>C", "<cmd>Gitsigns preview_hunk<CR>",
             desc = "PreviewHunk"},
