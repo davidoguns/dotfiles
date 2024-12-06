@@ -45,14 +45,14 @@ keymap("n", "<C-S-Right>", ":vertical resize -2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- Navigate buffers with Bufferline (plugin) controls
+keymap("n", "<leader><S-l>", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "<leader><S-h>", ":BufferLineMovePrev<CR>", opts)
+keymap("n", "<leader>bp", ":BufferLinePick<CR>", opts)
 
 -- Navigate and modify tabs, splits, and buffers
---keymap("n", ",d", ":b#<bar>bd#<CR>", opts) -- close buffer, keep tab/split open
 keymap("n", "<leader>bd", ":bd<CR>", opts) -- close buffer
--- requires BufOnly.vim script to be somewhere under '~/.local/share/nvim/site/plugin/'
--- https://github.com/vim-scripts/BufOnly.vim/blob/master/plugin/BufOnly.vim
--- https://www.vim.org/scripts/script.php?script_id=1071
-keymap("n", "<leader>bD", ":BufOnly<CR>", opts) -- close all other buffers
+keymap("n", "<leader>bD", ":BufferLineCloseOthers<CR>", opts) -- close all other buffers
 keymap("n", "<leader>bl", ":b#<CR>", opts) -- change to last edited buffer
 
 -- Visual --
