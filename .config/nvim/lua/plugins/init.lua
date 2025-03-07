@@ -28,6 +28,12 @@ return {
         dependencies = { "mfussenegger/nvim-dap" }
     },
 
+    {
+      'MeanderingProgrammer/render-markdown.nvim',
+      dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you use the mini.nvim suite
+      -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+        opts = {},
+    },
     { "nvim-neorg/neorg",
         lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
         version = "*", -- Pin Neorg to the latest stable release

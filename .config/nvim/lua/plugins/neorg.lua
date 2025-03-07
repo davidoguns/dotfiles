@@ -21,6 +21,12 @@ return {
                 ["core.highlights"] = {},
                 ["core.todo-introspector"] = {},
                 ["core.qol.toc"] = {},
+                ["core.qol.todo_items"] = {
+                    config = {
+                        create_todo_items = true,
+                        create_todo_parents = true
+                    }
+                },
                 ["core.ui"] = {},
             }
         })
