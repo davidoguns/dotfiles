@@ -150,9 +150,9 @@ set -o vi
 
 # run bottom command only on WSL? grep uname?
 # Run ssh on logging, only if not running yet
-if [ "$(uname -a | grep WSL2)" ]; then
-    if [ ! "$(ps -elf | grep -v grep | grep /usr/sbin/sshd)" ]; then
-        sudo service ssh start;
-    fi
-fi
+# if [ "$(uname -a | grep WSL2)" ]; then
+#     if [ ! "$(ps -elf | grep -v grep | grep /usr/sbin/sshd)" ]; then
+#         sudo service ssh start;
+#     fi
+# fi
 
