@@ -79,6 +79,8 @@ keymap("n", "<leader>tG", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<leader>ts", "<cmd>Telescope sessions<cr>", opts)
 keymap("n", "<leader>tb", "<cmd>Telescope buffers<cr>", opts)
 
+keymap("n", "<leader>mt", "<cmd>RenderMarkdown toggle<cr>", opts)
+
 -- Enable syntax fold shortcut
 keymap("n", "<leader>zz", "<cmd>:set foldmethod=syntax<cr>", opts)
 
