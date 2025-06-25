@@ -43,8 +43,8 @@ keymap("n", "<C-S-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-S-Right>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 -- Navigate buffers with Bufferline (plugin) controls
 keymap("n", "<leader><S-l>", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<leader><S-h>", ":BufferLineMovePrev<CR>", opts)

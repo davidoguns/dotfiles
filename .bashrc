@@ -137,7 +137,7 @@ if [ -f .localsetup.sh ]; then
 fi
 # export PATH=$JAVA_HOME/bin:$PATH
 
-source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
 
 #push this up earlier, user binary executable names take precedence
 export PATH=$HOME/.bin:$PATH
