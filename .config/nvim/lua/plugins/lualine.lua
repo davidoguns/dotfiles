@@ -20,12 +20,17 @@ return {
                     statusline = 100,
                     tabline = 100,
                     winbar = 100,
-                }
+                },
             },
             sections = {
                 lualine_a = {'mode'},
                 lualine_b = {'branch', 'diff', 'diagnostics'},
-                lualine_c = {'filename'},
+                lualine_c = {
+                    {
+                        'filename',
+                        path = 3, -- 1 => relative path; 3 => absolute, but ~ for homedir
+                    }
+                },
                 lualine_x = {'encoding', 'fileformat', 'filetype'},
                 lualine_y = {'progress'},
                 lualine_z = {'location'}
