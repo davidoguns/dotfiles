@@ -142,6 +142,7 @@ source "$HOME/.cargo/env"
 #push this up earlier, user binary executable names take precedence
 export PATH=$HOME/.bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/java/bin:$PATH
 
 EDITOR=nvim
 set -o vi

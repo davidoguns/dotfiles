@@ -24,3 +24,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.background = "dark"
 vim.opt.termguicolors = true                 -- enaables fancier font rendering and better colors
 vim.opt.updatetime = 1000                    -- updates to show symbol highlight faster, default = 5000
+vim.uv.os_setenv("JAVA_HOME",  "/opt/java-24")
