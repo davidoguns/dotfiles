@@ -13,7 +13,6 @@ return {
     { "L3MON4D3/LuaSnip" }, -- Snippets plugin
 
     { "neovim/nvim-lspconfig" }, -- Collection of configurations for built-in LSP client
-    -- { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
     { "williamboman/mason-lspconfig.nvim" },
     { "ray-x/lsp_signature.nvim" },
 
@@ -38,10 +37,23 @@ return {
         lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
         version = "*", -- Pin Neorg to the latest stable release
         config = true,
+        dependencies = {
+          'nvim-neorg/lua-utils.nvim',
+          'pysan3/pathlib.nvim',
+          'nvim-neotest/nvim-nio',
+        }
     },
     {
         "vhyrro/luarocks.nvim",
         priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
         config = true,
+    },
+    {
+        "olimorris/codecompanion.nvim",
+        opts = {},
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
     },
 }

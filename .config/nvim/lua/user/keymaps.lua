@@ -28,6 +28,9 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>sN", "<cmd>set norelativenumber<CR>", opts)
 keymap("n", "<leader>sn", "<cmd>set relativenumber<CR>", opts)
 
+keymap("n", "<leader>j", "<cmd>:cnext<CR>", opts)
+keymap("n", "<leader>k", "<cmd>:cprevious<CR>", opts)
+
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
