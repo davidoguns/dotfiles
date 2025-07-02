@@ -13,7 +13,6 @@ return {
     { "L3MON4D3/LuaSnip" }, -- Snippets plugin
 
     { "neovim/nvim-lspconfig" }, -- Collection of configurations for built-in LSP client
-    -- { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
     { "williamboman/mason-lspconfig.nvim" },
     { "ray-x/lsp_signature.nvim" },
 
