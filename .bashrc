@@ -126,6 +126,8 @@ function join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 alias clang-format-cwd="find . -name '*.c' -o -name '*.h' | xargs clang-format -i"
 
+alias nvim='JAVA_HOME=/opt/jdk-24/ nvim'
+
 # JAVA_HOME=/opt/java
 #
 #should the below readlink and other methods to resolve where .bashrc is to ensure
