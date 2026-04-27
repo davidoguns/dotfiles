@@ -20,28 +20,14 @@ return {
     -- or session. Is this new default neovim or another plugin's behavior?
     { "mhinz/vim-startify" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-    { "nvim-treesitter/nvim-treesitter-context" },
 
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui",
         dependencies = { "mfussenegger/nvim-dap" }
     },
-
     {
       'MeanderingProgrammer/render-markdown.nvim',
-      dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you use the mini.nvim suite
-      -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
         opts = {},
-    },
-    { "nvim-neorg/neorg",
-        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-        version = "*", -- Pin Neorg to the latest stable release
-        config = true,
-        dependencies = {
-          'nvim-neorg/lua-utils.nvim',
-          'pysan3/pathlib.nvim',
-          'nvim-neotest/nvim-nio',
-        }
     },
     {
         "vhyrro/luarocks.nvim",

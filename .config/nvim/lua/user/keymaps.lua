@@ -98,6 +98,12 @@ if vim.g.neovide then
     vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
 end
 
+-- Leap keymappings. Sneak style
+-- https://codeberg.org/andyg/leap.nvim
+vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+vim.keymap.set('n',             'gs', '<Plug>(leap-from-window)')
+
 -- LSP keymappings
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
