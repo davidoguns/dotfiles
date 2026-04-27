@@ -34,12 +34,4 @@ return {
         priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
         config = true,
     },
-    {
-        "olimorris/codecompanion.nvim",
-        opts = {},
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
-    },
 }
